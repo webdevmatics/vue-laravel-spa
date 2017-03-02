@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Notebook;
+use App\User;
 use Illuminate\Http\Request;
 
 class NotebookController extends Controller
@@ -14,7 +15,7 @@ class NotebookController extends Controller
      */
     public function index()
     {
-        return Notebook::with('user')->get();
+        return Notebook::latest()->with('user')->get();
     }
 
     /**
@@ -35,7 +36,17 @@ class NotebookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name'=>'required',
+            'body'=>'required',
+            ]);
+
+        $user=User::find(1);
+
+        $user->notebook()->create($request->all());
+
+
+        return "success";
     }
 
     /**
