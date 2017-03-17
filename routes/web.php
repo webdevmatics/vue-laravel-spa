@@ -16,3 +16,11 @@ Route::get('/', function () {
 });
 
 Route::resource('notebook','NotebookController');
+
+Route::get('/home', 'HomeController@index');
+
+
+Route::post('register','UserController@register');
+Route::post('login','UserController@login');
+// Route::get('logout','UserController@logout');
+

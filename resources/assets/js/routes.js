@@ -17,6 +17,14 @@ let routes=[
 {
 	path:'/create',
 	component:require('./components/Form')
+},
+{
+	path:'/login',
+	component:require('./components/Login')
+},
+{
+	path:'/register',
+	component:require('./components/Register')
 }
 ];
 

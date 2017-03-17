@@ -6,4 +6,5 @@
 /.idea
 Homestead.json
 Homestead.yaml
+settings.json
 .env
